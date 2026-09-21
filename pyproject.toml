@@ -1,0 +1,38 @@
+[build-system]
+requires = ["setuptools>=75", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "open-jev-mahjong"
+version = "0.0.1"
+description = "Mortal-distilled typed decision model experiments for riichi mahjong"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = []
+
+[project.optional-dependencies]
+train = [
+  "torch>=2.4",
+  "transformers>=4.48",
+  "datasets>=2.20",
+  "numpy>=1.26",
+]
+serve = [
+  "fastapi>=0.115",
+  "uvicorn>=0.30",
+]
+dev = [
+  "pytest>=8",
+  "ruff>=0.8",
+]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]
+
+[tool.ruff]
+target-version = "py310"
+line-length = 100
