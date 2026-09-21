@@ -33,7 +33,7 @@ def validate_row(row: dict[str, Any]) -> None:
     if not isinstance(criteria, dict) or not criteria:
         raise ValueError("questions.action.criteria must be a non-empty object")
     if not isinstance(probabilities, dict):
-        raise ValueError("gold.action.probabilities must be an object")
+        raise TypeError("gold.action.probabilities must be an object")
     if set(criteria) != set(probabilities):
         raise ValueError("criteria labels and probability labels must match")
     if selected not in criteria:
@@ -52,7 +52,7 @@ def read_jsonl(path: str | Path) -> list[dict[str, Any]]:
                 continue
             row = json.loads(line)
             if not isinstance(row, dict):
-                raise ValueError(f"line {line_number}: expected JSON object")
+                raise TypeError(f"line {line_number}: expected JSON object")
             validate_row(row)
             rows.append(row)
     return rows
