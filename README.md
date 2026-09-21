@@ -183,6 +183,15 @@ open-jev-mahjong/
 
 Training code will be added after the dataset contract is proven. The upstream reference implementation is [intikhab49/open-jev-typed-decision-engine](https://github.com/intikhab49/open-jev-typed-decision-engine).
 
+## Roadmap
+
+- [#1 Export Mortal hard-label distillation dataset](https://github.com/hamakyo/open-jev-mahjong/issues/1)
+- [#2 Train ModernBERT student from local Mahjong JSONL](https://github.com/hamakyo/open-jev-mahjong/issues/2)
+- [#3 Run 5k and 50k distillation baselines](https://github.com/hamakyo/open-jev-mahjong/issues/3)
+- [#4 Serve the student and integrate with jev-mahjong-bench](https://github.com/hamakyo/open-jev-mahjong/issues/4)
+- [#5 Evaluate against Mortal, Jev, GPT and random](https://github.com/hamakyo/open-jev-mahjong/issues/5)
+- [#6 Investigate soft-label distillation](https://github.com/hamakyo/open-jev-mahjong/issues/6)
+
 ## Status
 
 Early scaffold. No trained Mahjong checkpoint is published yet.
